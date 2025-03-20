@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Base API setup
 const api = axios.create({
-  baseURL: "https://shipping-company-bdos.onrender.com/",  
+  baseURL: "https://shipping-company-bdos.onrender.com/api/auth/",  
   headers: {
     "Content-Type": "application/json",
   },
