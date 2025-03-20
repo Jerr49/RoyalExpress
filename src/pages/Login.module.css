@@ -1,0 +1,33 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-background {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #00bcd4, #004d40);
+  background-size: 400% 400%;
+  animation: background-animation 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background animation */
+@keyframes background-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
