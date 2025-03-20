@@ -293,56 +293,78 @@ const ProductForm = () => {
 
       {/* Modal to display trackingId */}
       <Modal
-        open={modalOpen}
-        onClose={handleCloseModal}
-        aria-labelledby="tracking-id-modal"
-        aria-describedby="tracking-id-modal-description"
+      open={modalOpen}
+      onClose={handleCloseModal}
+      aria-labelledby="tracking-id-modal"
+      aria-describedby="tracking-id-modal-description"
+    >
+      <Box
+        sx={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: { xs: '90%', sm: 400 }, // Responsive width
+          maxWidth: '90%', // Ensure it doesn't overflow on small screens
+          bgcolor: 'background.paper',
+          boxShadow: 24,
+          p: 4,
+          borderRadius: '12px', // Softer rounded corners
+          textAlign: 'center',
+          border: 'none', // Remove default border
+          outline: 'none', // Remove focus outline
+        }}
       >
-        <Box
+        {/* Modal Header */}
+        <Typography
+          variant="h6"
+          component="h2"
           sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 400,
-            bgcolor: "background.paper",
-            boxShadow: 24,
-            p: 4,
-            borderRadius: "8px",
-            textAlign: "center",
+            mb: 2,
+            fontWeight: 'bold',
+            color: '#00796b', // Teal color for a modern look
           }}
         >
-          <Typography variant="h6" component="h2" sx={{ mb: 2 }}>
-            Product Created Successfully!
-          </Typography>
-          <Typography variant="body1" sx={{ mb: 2 }}>
-            Your tracking ID is:
-          </Typography>
-          <Typography
-            variant="h5"
-            component="p"
-            sx={{ fontWeight: "bold", color: "#00796b" }}
-          >
-            {trackingId}
-          </Typography>
-          <Button
-            variant="contained"
-            onClick={handleCloseModal}
-            sx={{
-              mt: 3,
-              backgroundColor: "#00796b",
-              "&:hover": {
-                backgroundColor: "#004d40",
-              },
-              borderRadius: "8px",
-              padding: "10px",
-              fontWeight: "bold",
-            }}
-          >
-            Close
-          </Button>
-        </Box>
-      </Modal>
+          Product Created Successfully!
+        </Typography>
+
+        {/* Modal Content */}
+        <Typography variant="body1" sx={{ mb: 2, color: '#555' }}>
+          Your tracking ID is:
+        </Typography>
+        <Typography
+          variant="h5"
+          component="p"
+          sx={{
+            fontWeight: 'bold',
+            color: '#00796b', // Teal color for emphasis
+            mb: 3,
+          }}
+        >
+          {trackingId}
+        </Typography>
+
+        {/* Modal Action Button */}
+        <Button
+          variant="contained"
+          onClick={handleCloseModal}
+          sx={{
+            mt: 2,
+            backgroundColor: '#00796b', 
+            '&:hover': {
+              backgroundColor: '#004d40', 
+            },
+            borderRadius: '8px',
+            padding: '10px 20px',
+            fontWeight: 'bold',
+            textTransform: 'none', 
+            fontSize: '1rem', 
+          }}
+        >
+          Close
+        </Button>
+      </Box>
+    </Modal>
     </Container>
   );
 };
